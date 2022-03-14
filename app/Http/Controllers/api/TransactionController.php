@@ -67,6 +67,10 @@ class TransactionController extends Controller
      */
     public function show(Transaction $transaction)
     {
+        $total_paid_amount = $transaction->payments()->get()->sum('amount');
+        if ($transaction->amount === $total_paid_amount) {
+            $transaction->update(['status' => 'paid']);
+        }
         return $transaction;
     }
 

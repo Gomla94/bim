@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\BasicReportRequest;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ReportController extends Controller
 {
@@ -26,8 +27,8 @@ class ReportController extends Controller
         return $filtered_transactions;
     }
 
-    public function monthly_report(BasicReportRequest $request)
+    public function monthly_report()
     {
-        //
+       //
     }
 }
